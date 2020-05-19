@@ -2,25 +2,11 @@
 % TO DO: 
 %     - PTB latency test? (but audio capture device may be late anyway so no
 %       point in doing this...)
-%     - test on Windows
-
-% notes
+%     - test on Windows/Linux
 
 
-% 1. The screen info does not go away after the first stage 
-% (where it says "congratulations") is done 
-% also maybe it's either good to inform people to read the screen or insert
-% a beep tone indiating it's ended.
-
-% 2. considering people like me, a.k.a. negative controls (Gil did it in 
-% 4min, I couldn't finish, maybe it's better to divide it into blocks
-% intead of looping through infinite times. Hence, I'd use for loop instead
-% of while loop
-% >> break after certain count number// time out // 
-
-
-%  for complexity check
-% checkcode('tapTrainer_PTB.m', '-cyc')
+% for complexity check please see following repo: 
+% https://github.com/Remi-Gau/matlab_checkcode
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

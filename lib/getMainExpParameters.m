@@ -10,12 +10,6 @@ function     [cfg,expParam] = getMainExpParameters(cfg,expParam)
 % % %
 
 % % %
-% some of the below is common with getTrainingParameters.m
-% can be moved to getParams.m
-% % %
-
-
-% % %
 % start the sequence with one B-category segment that will be discarded during analysis
 % % %
 
@@ -30,8 +24,11 @@ expParam.sequenceDelay = 1;
 expParam.pauseSeq = 1; 
 
 % define ideal number of sequences to be made
-expParam.numSequences = 2; % 6
-
+if cfg.debug
+    expParam.numSequences = 6; % multiples of 3
+else
+    expParam.numSequences = 3;
+end
 %% contruct individual sound events (that will make up each pattern)
 
 % define envelope shape of the individual sound event
@@ -79,7 +76,7 @@ cfg.changeGridIOIStep       = 0;
 
 % how many pattern cycles are within each step of [ABBB]
 % how many pattern in each segment A or B.
-cfg.nPatternPerSegment = 4; % 4 or 6
+cfg.nPatternPerSegment = 4;
 
 
 % there can be a pause after all segments for category A are played 
@@ -116,7 +113,7 @@ cfg.interStepInterval = (cfg.interSegmInterval * cfg.nSegmPerStep) + ...
 %% construct whole sequence
 % how many steps are in the whole sequence
 % how many repetition of grouped segment [ABBB] in the whole sequence
-cfg.nStepsPerSequence = 4; % 5
+cfg.nStepsPerSequence = 5;
 
 
 % calculate trial duration (min)
@@ -175,7 +172,7 @@ cfg.seqDesignFullExp = getAllSeqDesign(cfg.patternSimple, cfg.patternComplex, cf
 %% extract below numbers for preallocation in logFile
 
 
-%% generate example stimulus for volume setting
+%% generate example audio for volume setting
 cfg.volumeSettingSound = repmat(makeStimMainExp(ones(1,16), cfg, cfg.gridIOIs(end), cfg.F0s(end)), 2,1); 
 
 

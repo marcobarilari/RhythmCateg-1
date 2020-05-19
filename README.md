@@ -8,6 +8,7 @@ This repository contains Matlab code for tapping pilot, including:
  
 * Matlab  
 * Psychtoolbox
+** If operating system is Linux, then Octave 5.1 is required
 
 &nbsp;  
 

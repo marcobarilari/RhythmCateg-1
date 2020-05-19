@@ -1,9 +1,9 @@
 
 % 
-% !!! TL: I SOMETIMES HAVE CRACKS IN THE SOUND WHEN I TAP... !!!
+% !!! SOMETIMES THERE ARE CRACKS IN THE AUDIO !!!
 % (maybe there's too much in the audio buffer at the same time?)
 % 
-% CB: I do not hear any cracks in the main exp.
+
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 

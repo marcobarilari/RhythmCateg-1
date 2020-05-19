@@ -26,9 +26,7 @@ expParameters.task = task;
 %% Debug mode settings
 cfg.debug               = false;  % To test the script
 cfg.testingTranspScreen = false;  % To test with trasparent full size screen 
-% not sure that's helpful now 
-% what I wanted : in debug mode, transparent monitor, no hide cursor,
-% no blocking keyboard - just play the sounds
+
 
 %% set the type of your computer
 if IsWin
@@ -72,7 +70,14 @@ cfg.keyboard = [];
 cfg.responseBox = []; 
 
 
+if cfg.debug
+    fprintf('\n\n\n\n')
+    fprintf('######################################## \n')
+    fprintf('##  DEBUG MODE, NOT THE ACTUAL EXP CODE  ## \n')
+    fprintf('######################################## \n\n')
+end
 
-
-
+%% create a function for linux/octave
+% 
+% status = system(command)
 
