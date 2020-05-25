@@ -42,17 +42,7 @@ patterns2choose = [cfg.patternSimple,cfg.patternComplex];
 % each pattern will have its own ID (integer number; patterns with the same
 % ID number from category A vs. B will have the same inter-onset intervals,
 % just rearranged in time)
-% % %
-% really? 
-% where does the control for that same IOI happen in the script?
-% TL: yes, they are written in the text file (from which they are loaded) in that way
-% why the integers are saved as cell? 
-% TL: cause I think we should save it as string, e.g. 'simple23' not just
-% integer
-% CB: we are already saying "simple" in a column in datalog("currSeq.segmCateg"). 
-% To use ID number as an index (e.g. , it might be better to keep "23" 
-% in column. Do you intent to use "simple23" as an index somewhere?
-% % %
+
 % TL: I know the same thing is saved twice (i.e. the category information is, saved 
 % in the "category" colum, but is also in the rhythm ID string. But I'd perhaps keep this
 % redundancy for the sake of safety :) Because this way I can directly check if there is
@@ -62,7 +52,6 @@ patterns2choose = [cfg.patternSimple,cfg.patternComplex];
 % rhythm ID number at any point I can always get it out of the string with regexp. 
 
 seq.patternID = cell(1, cfg.nPatternPerSegment * cfg.nSegmPerStep * cfg.nStepsPerSequence); 
-% seq.patternID = zeros(1, cfg.nPatternPerSegment * cfg.nSegmPerStep * cfg.nStepsPerSequence); 
 
 % cell array, each element is a grid representation of the chosen pattern
 % (successively as the sequence unfolds)
@@ -214,7 +203,7 @@ for stepi=1:cfg.nStepsPerSequence
             currPatternCateg = regexp(patterns2choose(currPatternIdx).ID, '\D*(?=\d.*)', 'match'); 
             currPatternCateg = currPatternCateg{1}; 
             if ~strcmpi(currPatternCateg,currCategLabel)
-                warning('mimatching category labels during sequence construction...'); 
+                warning('mismatching category labels during sequence construction...'); 
             end
             
             % get the pattern

@@ -25,9 +25,9 @@ expParam.pauseSeq = 1;
 
 % define ideal number of sequences to be made
 if cfg.debug
-    expParam.numSequences = 6; % multiples of 3
+    expParam.numSequences = 3; % multiples of 3
 else
-    expParam.numSequences = 3;
+    expParam.numSequences = 6;
 end
 %% contruct individual sound events (that will make up each pattern)
 
@@ -165,7 +165,10 @@ cfg.patternComplex = getPatternInfo(grahnPatComplex, 'complex', cfg);
 
 cfg.labelCategA = 'simple'; 
 cfg.labelCategB = 'complex'; 
+%%%%%%%%%%%%
 % ! important, the order of arguments matters ! -> getAllSeq(categA, categB, ...)
+% CB: BECAUSE simple26 is the brother of complex26 ???
+%%%%%%%%%%%%
 cfg.seqDesignFullExp = getAllSeqDesign(cfg.patternSimple, cfg.patternComplex, cfg, expParam); 
 
 

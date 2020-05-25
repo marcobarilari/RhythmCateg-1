@@ -100,7 +100,10 @@ elseif strcmp(expParam.task,'tapTraining')
         case 'close'
 
             % close txt log files
-            fclose(datalog.fidTapTrainer);
+            if isfield(datalog,'fidStim') || isfield(datalog,'fidTap')
+                fclose(datalog.fidStim);
+                fclose(datalog.fidTap);
+            end
     end
 
     

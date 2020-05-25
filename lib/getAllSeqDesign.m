@@ -16,7 +16,7 @@ function res = getAllSeqDesign(categA,categB,cfg,expParam)
 patterns2choose = [patterns2chooseA, patterns2chooseB]; 
 
 
-% allocate restult with dim: sequence x step x segm x pattern
+% allocate result with dimension: sequence x step x segm x pattern
 res = cell(expParam.numSequences, cfg.nStepsPerSequence, cfg.nSegmPerStep, cfg.nPatternPerSegment); 
 
 for seqi=1:expParam.numSequences

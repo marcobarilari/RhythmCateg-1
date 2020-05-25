@@ -24,8 +24,8 @@ expParameters.task = task;
 
 
 %% Debug mode settings
-cfg.debug               = false;  % To test the script
-cfg.testingTranspScreen = false;  % To test with trasparent full size screen 
+cfg.debug               = 0 ;  % To test the script
+cfg.testingTranspScreen = 0 ;  % To test with trasparent full size screen 
 
 
 %% set the type of your computer
